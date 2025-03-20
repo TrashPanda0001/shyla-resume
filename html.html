@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shyla Middha - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            padding-bottom: 60px;
+        }
+        
+        .header {
+            background-color: #4169e1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .search-container {
+            background-color: white;
+            margin: 15px;
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-container input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+        
+        .search-container i {
+            padding: 10px;
+            color: #ff6347;
+        }
+        
+        .content {
+            padding: 15px;
+        }
+        
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .work-card {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .work-image {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .work-details h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .work-details h4 {
+            color: #666;
+            font-weight: normal;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .work-details .dates {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .work-details ul {
+            padding-left: 20px;
+            font-size: 14px;
+        }
+        
+        .work-details li {
+            margin-bottom: 5px;
+        }
+        
+        .edu-card {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .edu-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        .edu-card h3 {
+            margin-bottom: 10px;
+        }
+        
+        .edu-card .location {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .edu-card .dates {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .skill-card {
+            padding: 15px;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .skill-card h3 {
+            margin-bottom: 10px;
+            color: #4169e1;
+        }
+        
+        .skill-card ul {
+            padding-left: 20px;
+            font-size: 14px;
+        }
+        
+        .navbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #666;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        
+        .nav-item i {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+        
+        .nav-item.active {
+            color: #ff6347;
+        }
+        
+        .contact-card {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .contact-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        .contact-card h2 {
+            margin-bottom: 15px;
+        }
+        
+        .contact-card .contact-info {
+            margin-bottom: 10px;
+        }
+        
+        .contact-card .contact-info i {
+            margin-right: 10px;
+            color: #4169e1;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Shyla Middha</h1>
+        <p>Brand Partnership Associate | Digital Marketing | Project Manager</p>
+    </div>
+    
+    <div class="search-container">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Your search for a new employee ends here">
+    </div>
+    
+    <div class="content">
+        <div id="work" class="page active">
+            <h2 style="margin-bottom: 15px;">Work Experience</h2>
+            
+            <div class="card work-card">
+                <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/76/79/98/767998e0-413e-1b46-a2ec-caa2ce21e664/AppIcon-0-0-1x_U007emarketing-0-6-0-0-85-220.png/1200x600wa.png" alt="Ferns N Petals" class="work-image">
+                <div class="work-details">
+                    <h3>Ferns N Petals Pvt Ltd</h3>
+                    <h4>Brand Partnership Associate</h4>
+                    <div class="dates">May 2024 - September 2024</div>
+                    <ul>
+                        <li>Created impactful marketing materials, leading to 10+ brand partnerships</li>
+                        <li>Led targeted outreach efforts, initiating 5+ new brand partnerships</li>
+                        <li>Spearheaded static photo-shoot project to enhance marketing assets</li>
+                        <li>Conducted market research for FNP Lux line launch</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card work-card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/1920px-Starbucks_Corporation_Logo_2011.svg.png" alt="Starbucks" class="work-image">
+                <div class="work-details">
+                    <h3>Starbucks Coffee Singapore</h3>
+                    <h4>Corporate Sales Associate</h4>
+                    <div class="dates">April 2023 - November 2023</div>
+                    <ul>
+                        <li>Led Mooncake Festival project, surpassing sales goals by 37%</li>
+                        <li>Developed outreach programs reaching 1000+ customers</li>
+                        <li>Managed daily operations for corporate sales</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card work-card">
+                <img src="https://scontent.fblr21-1.fna.fbcdn.net/v/t39.30808-6/307022679_163812962969932_7790797133504176635_n.png?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=OIEIg7wsIkMQ7kNvgEwQw4c&_nc_oc=AdnKXJZRuTfaXvF3pEqkE-hdv4OEmNwcbkNE8tszXAj_J_baC32WC_T0bNA4X7QWCoQ&_nc_zt=23&_nc_ht=scontent.fblr21-1.fna&_nc_gid=4tGRxN8qvROB3nLsA28Sdw&oh=00_AYFF3wzqTBrnRu6Im6RXm5QnYmiVPjkDLF1FKYzL-JTOHw&oe=67E1ADD7" alt="Sahyog" class="work-image">
+                <div class="work-details">
+                    <h3>Sahyog Care for You (NGO)</h3>
+                    <h4>Education Program Coordinator</h4>
+                    <div class="dates">May 2022 - July 2022</div>
+                    <ul>
+                        <li>Led 4 volunteers teaching ~100 underprivileged students</li>
+                        <li>Organized workshops on societal issues for 50+ people</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card work-card">
+                <img src="https://media.licdn.com/dms/image/v2/C510BAQGu1udkTFWzug/company-logo_200_200/company-logo_200_200/0/1630614906689/coim_asia_pacific_pte_logo?e=2147483647&v=beta&t=QGu7hokaUbgEB-BgtJUV6gqEU0jZf-unarh9bFjbuMM" alt="COIM Asia" class="work-image">
+                <div class="work-details">
+                    <h3>COIM Asia Pacific Pte Ltd</h3>
+                    <h4>Logistics Intern</h4>
+                    <div class="dates">May 2021 - August 2021</div>
+                    <ul>
+                        <li>Prepared and processed export shipping documents</li>
+                        <li>Maintained export documentation records</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card work-card">
+                <img src="https://media.istockphoto.com/id/1157408074/vector/summer-sunrise-sunny-logo-design.jpg?s=612x612&w=0&k=20&c=U89TckUgtuFS4h2ffjWH8hCbVgq4i9ILuK_DlXInaEo=" alt="Sunrise Victuals" class="work-image">
+                <div class="work-details">
+                    <h3>Sunrise Victuals Pvt Ltd</h3>
+                    <h4>e-Marketing & Communication Manager</h4>
+                    <div class="dates">August 2020 - November 2020</div>
+                    <ul>
+                        <li>Implemented digital marketing strategies resulting in 25% sales boost</li>
+                        <li>Conducted market research on trends and consumer preferences</li>
+                        <li>Created engaging content for blog posts and social media</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="education" class="page">
+            <h2 style="margin-bottom: 15px;">Education</h2>
+            
+            <div class="card edu-card">
+                <img src="https://i0.wp.com/postgrad.com.sg/wp-content/uploads/2019/10/School-Cover-Image_ESSEC.png?resize=760%2C497&ssl=1" alt="ESSEC Business School">
+                <h3>ESSEC Business School</h3>
+                <div class="location">Singapore, Singapore</div>
+                <div class="dates">September 2019 - November 2023</div>
+                <p>Global Bachelor's in Business Administration</p>
+                <p style="margin-top: 10px; font-size: 14px;">Relevant Coursework: Communication, Project Management, Entrepreneurship, People & Organisation, Business Law, International Marketing, Leading & Managing Teams and Finance</p>
+            </div>
+            
+            <div class="card edu-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Seal_of_University_of_California%2C_Berkeley.svg/1200px-Seal_of_University_of_California%2C_Berkeley.svg.png" alt="UC Berkeley">
+                <h3>University of California Berkeley</h3>
+                <div class="location">Berkeley, CA</div>
+                <div class="dates">January 2022 - December 2022</div>
+                <p>Diploma in Innovation Management and Entrepreneurship</p>
+                <p style="margin-top: 10px; font-size: 14px;">Relevant Coursework: Managing Product & Go-to-Market Strategies, Design Thinking and Prototyping, AI for Management, Business Negotiations and Finance</p>
+            </div>
+        </div>
+        
+        <div id="skills" class="page">
+            <h2 style="margin-bottom: 15px;">Skills & Certifications</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>English (Fluent)</li>
+                        <li>Hindi (Fluent)</li>
+                        <li>Chinese (Limited Proficiency)</li>
+                        <li>French (Limited Proficiency)</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>HTML (Basic Proficiency)</li>
+                        <li>Python (Basic Proficiency)</li>
+                        <li>MS Office Suite</li>
+                        <li>Google Suite</li>
+                        <li>Digital Marketing</li>
+                        <li>Project Management</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <h3>Certifications</h3>
+                    <ul>
+                        <li>Introduction to Public Speaking - University of Washington</li>
+                        <li>Think Again IV: How to Avoid Fallacies - Duke University</li>
+                        <li>Entrepreneurship Essentials - IIT Delhi</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-card">
+                    <h3>Interests</h3>
+                    <ul>
+                        <li>Vlogging</li>
+                        <li>Women's Empowerment Advocacy</li>
+                        <li>Helping Underprivileged Children</li>
+                        <li>Animal Welfare</li>
+                        <li>Baking</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="contact" class="page">
+            <div class="card contact-card">
+                <img src="https://media.licdn.com/dms/image/v2/D4E03AQEK7j8QtTspSA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707819179287?e=1747872000&v=beta&t=dBy5psXYSo9OhIW8YMpwe597fWz1iAgHV4c82cskENQ" alt="Shyla Middha">
+                <h2>Shyla Middha</h2>
+                
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i> India
+                </div>
+                
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i> +91 7683-020811
+                </div>
+                
+                <div class="contact-info">
+                    <i class="fas fa-envelope"></i> shyla.middha@outlook.com
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <a href="https://www.linkedin.com/in/shyla-middha-3206b82b1/" style="margin: 0 10px; color: #4169e1;"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="#" style="margin: 0 10px; color: #4169e1;"><i class="fab fa-instagram fa-2x"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="navbar">
+        <a href="#" class="nav-item active" onclick="changePage('work')">
+            <i class="fas fa-briefcase"></i>
+            <span>Work</span>
+        </a>
+        <a href="#" class="nav-item" onclick="changePage('education')">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Education</span>
+        </a>
+        <a href="#" class="nav-item" onclick="changePage('skills')">
+            <i class="fas fa-tasks"></i>
+            <span>Skills</span>
+        </a>
+        <a href="#" class="nav-item" onclick="changePage('contact')">
+            <i class="fas fa-address-card"></i>
+            <span>Contact</span>
+        </a>
+    </div>
+
+    <script>
+        function changePage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            // Highlight active nav item
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
