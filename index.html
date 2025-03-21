@@ -720,95 +720,95 @@ function submitForm() {
     }, 5000);
   });
 }
-function addGitHubPagesResumeDownload() {
-  // Create the download button
-  const downloadButton = document.createElement('a');
-  downloadButton.id = 'downloadResume';
-  downloadButton.innerHTML = '<i class="fas fa-download"></i> Download Resume';
-  downloadButton.style.display = 'block';
-  downloadButton.style.width = '100%';
-  downloadButton.style.padding = '12px 20px';
-  downloadButton.style.marginTop = '20px';
-  downloadButton.style.marginBottom = '20px';
-  downloadButton.style.backgroundColor = '#4169e1';
-  downloadButton.style.color = 'white';
-  downloadButton.style.textAlign = 'center';
-  downloadButton.style.borderRadius = '5px';
-  downloadButton.style.textDecoration = 'none';
-  downloadButton.style.fontWeight = 'bold';
-  downloadButton.style.cursor = 'pointer';
-  downloadButton.style.transition = 'background-color 0.3s ease';
+// function addGitHubPagesResumeDownload() {
+//   // Create the download button
+//   const downloadButton = document.createElement('a');
+//   downloadButton.id = 'downloadResume';
+//   downloadButton.innerHTML = '<i class="fas fa-download"></i> Download Resume';
+//   downloadButton.style.display = 'block';
+//   downloadButton.style.width = '100%';
+//   downloadButton.style.padding = '12px 20px';
+//   downloadButton.style.marginTop = '20px';
+//   downloadButton.style.marginBottom = '20px';
+//   downloadButton.style.backgroundColor = '#4169e1';
+//   downloadButton.style.color = 'white';
+//   downloadButton.style.textAlign = 'center';
+//   downloadButton.style.borderRadius = '5px';
+//   downloadButton.style.textDecoration = 'none';
+//   downloadButton.style.fontWeight = 'bold';
+//   downloadButton.style.cursor = 'pointer';
+//   downloadButton.style.transition = 'background-color 0.3s ease';
   
-  // Set the href attribute to your resume PDF file in your GitHub repository
-  // Assuming the PDF is in the root directory of your repository
-  downloadButton.href = './ShylaMiddha_Resume.pdf';
-  downloadButton.download = 'ShylaMiddha_Resume.pdf';
+//   // Set the href attribute to your resume PDF file in your GitHub repository
+//   // Assuming the PDF is in the root directory of your repository
+//   downloadButton.href = './ShylaMiddha_Resume.pdf';
+//   downloadButton.download = 'ShylaMiddha_Resume.pdf';
   
-  // Event listener for hover effect
-  downloadButton.addEventListener('mouseover', function() {
-    this.style.backgroundColor = '#304ffe';
-  });
+//   // Event listener for hover effect
+//   downloadButton.addEventListener('mouseover', function() {
+//     this.style.backgroundColor = '#304ffe';
+//   });
   
-  downloadButton.addEventListener('mouseout', function() {
-    this.style.backgroundColor = '#4169e1';
-  });
+//   downloadButton.addEventListener('mouseout', function() {
+//     this.style.backgroundColor = '#4169e1';
+//   });
   
-  // Add button to the contact section
-  const contactCard = document.querySelector('.contact-card');
-  const socialLinksDiv = contactCard.querySelector('div[style*="margin-top: 20px"]');
+//   // Add button to the contact section
+//   const contactCard = document.querySelector('.contact-card');
+//   const socialLinksDiv = contactCard.querySelector('div[style*="margin-top: 20px"]');
   
-  // Insert the download button after the social links
-  if (socialLinksDiv) {
-    // Create a wrapper to maintain proper spacing
-    const buttonWrapper = document.createElement('div');
-    buttonWrapper.style.marginTop = '20px';
-    buttonWrapper.appendChild(downloadButton);
+//   // Insert the download button after the social links
+//   if (socialLinksDiv) {
+//     // Create a wrapper to maintain proper spacing
+//     const buttonWrapper = document.createElement('div');
+//     buttonWrapper.style.marginTop = '20px';
+//     buttonWrapper.appendChild(downloadButton);
     
-    // Insert after social links
-    socialLinksDiv.parentNode.insertBefore(buttonWrapper, socialLinksDiv.nextSibling);
-  } else {
-    // As fallback, append to the end of contact card
-    contactCard.appendChild(downloadButton);
-  }
+//     // Insert after social links
+//     socialLinksDiv.parentNode.insertBefore(buttonWrapper, socialLinksDiv.nextSibling);
+//   } else {
+//     // As fallback, append to the end of contact card
+//     contactCard.appendChild(downloadButton);
+//   }
   
-  // Add dark mode support
-  const darkModeStyle = document.createElement('style');
-  darkModeStyle.textContent = `
-    .dark-mode #downloadResume {
-      background-color: #1a237e;
-    }
+//   // Add dark mode support
+//   const darkModeStyle = document.createElement('style');
+//   darkModeStyle.textContent = `
+//     .dark-mode #downloadResume {
+//       background-color: #1a237e;
+//     }
     
-    .dark-mode #downloadResume:hover {
-      background-color: #303f9f;
-    }
-  `;
-  document.head.appendChild(darkModeStyle);
-}
+//     .dark-mode #downloadResume:hover {
+//       background-color: #303f9f;
+//     }
+//   `;
+//   document.head.appendChild(darkModeStyle);
+// }
 
-// Call the function when the contact page is active or when the page changes
-function initResumeDownload() {
-  if (document.getElementById('contact') && document.getElementById('contact').classList.contains('active')) {
-    // Only add the button if it doesn't already exist
-    if (!document.getElementById('downloadResume')) {
-      addGitHubPagesResumeDownload();
-    }
-  }
-}
+// // Call the function when the contact page is active or when the page changes
+// function initResumeDownload() {
+//   if (document.getElementById('contact') && document.getElementById('contact').classList.contains('active')) {
+//     // Only add the button if it doesn't already exist
+//     if (!document.getElementById('downloadResume')) {
+//       addGitHubPagesResumeDownload();
+//     }
+//   }
+// }
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  // Initial check
-  initResumeDownload();
+// // Initialize when DOM is loaded
+// document.addEventListener('DOMContentLoaded', function() {
+//   // Initial check
+//   initResumeDownload();
   
-  // Also initialize when changing pages
-  const navItems = document.querySelectorAll('.nav-item');
-  navItems.forEach(item => {
-    item.addEventListener('click', function() {
-      // Small delay to ensure page change is complete
-      setTimeout(initResumeDownload, 100);
-    });
-  });
-});
+//   // Also initialize when changing pages
+//   const navItems = document.querySelectorAll('.nav-item');
+//   navItems.forEach(item => {
+//     item.addEventListener('click', function() {
+//       // Small delay to ensure page change is complete
+//       setTimeout(initResumeDownload, 100);
+//     });
+//   });
+// });
 
 // If document is already loaded
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
